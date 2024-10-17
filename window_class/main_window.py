@@ -25,7 +25,7 @@ class MainWindow(tk.Tk):
             self.grid_game.destroy()
             self.grid_game = tk.Frame(self)
         self.grid_game.pack(padx=10, pady=10)
-        self.n = 1
+        self.n = 12
         self.massive_game = create_massive(self.n)
         self.massive_button = []
         for i in range(10):
