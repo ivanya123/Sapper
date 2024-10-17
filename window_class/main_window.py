@@ -37,7 +37,7 @@ class MainWindow(tk.Tk):
                 button.i = i
                 button.j = j
                 button.bind('<Button-1>', lambda e, b=button: self.open_cell(e, b))
-                button.bind('<Button-3>', lambda e: e.widget.configure(text='M'))
+                button.bind('<Button-3>', lambda e: self.notice_cell(e))
                 button.grid(row=i, column=j)
                 new_row.append(button)
             self.massive_button.append(new_row)
@@ -99,7 +99,7 @@ class MainWindow(tk.Tk):
 
     def notice_cell(self, event: tk.Event):
         b: tk.Button = event.widget
-        if b['text'] != '0':
+        if b['text'] != 'M':
             b.configure(text='M')
-        else:
+        elif b['text'] == 'M':
             b.configure(text='')
